@@ -100,7 +100,7 @@ const WorkoutDetails = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:8000/api/workouts', {
+      const response = await axios.post('https://fitness-tracker-g04o.onrender.com/api/workouts', {
         ...workoutData,
         repsPerSet: workoutData.repsPerSet.map(rep => parseInt(rep || 0)),
         weightPerSet: workoutData.weightPerSet.map(weight => parseFloat(weight || 0))
@@ -117,7 +117,7 @@ const WorkoutDetails = () => {
 
   const fetchPastWorkouts = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/workouts', {
+      const response = await axios.get('https://fitness-tracker-g04o.onrender.com/api/workouts', {
         headers: { Authorization: `Bearer ${localStorage.getItem('jwttoken')}` }
       });
       setPastWorkouts(response.data);
@@ -129,7 +129,7 @@ const WorkoutDetails = () => {
   const fetchAnalytics = async () => {
     if (!analyticsExercise) return;
     try {
-      const response = await axios.get(`http://localhost:8000/api/workouts/analytics?exercise=${analyticsExercise}`, {
+      const response = await axios.get(`https://fitness-tracker-g04o.onrender.com/api/workouts/analytics?exercise=${analyticsExercise}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('jwttoken')}` }
       });
       setAnalyticsData(response.data);

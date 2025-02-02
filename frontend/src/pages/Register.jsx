@@ -47,7 +47,7 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:8000/api/users/register", {
+      const response = await axios.post("https://fitness-tracker-g04o.onrender.com/api/users/register", {
         name,
         email,
         password,

@@ -18,7 +18,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/api/users/contact", formData);
+      const response = await axios.post("https://fitness-tracker-g04o.onrender.com/api/users/contact", formData);
       setFormData({ name: "", email: "", message: "" });
       toast.success(response.data.message);
     } catch (error) {

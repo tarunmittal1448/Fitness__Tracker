@@ -68,7 +68,7 @@ const UpdateProfile = () => {
       
 
       const response = await axios.put(
-        "http://localhost:8000/api/users/update-profile",
+        "https://fitness-tracker-g04o.onrender.com/api/users/update-profile",
         formDataToSend,
         {
           headers: {

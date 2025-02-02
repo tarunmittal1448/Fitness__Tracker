@@ -18,7 +18,7 @@ const SignIn = () => {
     e.preventDefault();
     setLoading(true); // Start loading
     try {
-      const response = await axios.post("http://localhost:8000/api/users/login", {
+      const response = await axios.post("https://fitness-tracker-g04o.onrender.com/api/users/login", {
         email,
         password,
       });
